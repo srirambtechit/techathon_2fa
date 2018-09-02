@@ -1,0 +1,10 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: "RNHouseSansW03-Regular";
+	src: url("/fonts/RNHouseSansW03-Regular.woff") format("woff")		
+}
+
+body {
+	font-family: RNHouseSansW03-regular, Calibri, Geneva, sans-serif
+}
