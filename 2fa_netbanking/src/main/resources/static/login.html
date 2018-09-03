@@ -1,252 +1,259 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>RBS Digital Bank</title>
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-	crossorigin="anonymous">
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-	integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-	crossorigin="anonymous"></script>
+	<meta charset="UTF-8">
+	<title>RBS Digital Bank</title>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js">
+	</script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+	</script>
+	<link href="/css/main.css" rel="stylesheet">
+	<style>
 
-<link rel="stylesheet" href="/css/main.css">	
+	.nav-bar-back {
+	   background-color: #0a2f64;
+	   border-top: 1px solid white;
+	}
 
+	.navbar-dark .navbar-nav .nav-link {
+	   color: white;
+	}
+
+	#global {
+	   padding-left: 300px;
+	}
+
+	.navbar {
+	   width: 1000px;
+	}
+
+	.navbar-nav1 {
+	   padding-left: 160px;
+	}
+
+	.navbar-nav1 li{
+	   padding-left: 25px;
+	}
+
+	.navbar-nav2 {
+	   padding-left: 35px;
+	}
+
+	.navbar-nav2 li {
+	   padding-left: 20px;
+	}
+
+	.navbar-nav2 .nav-item-end {
+
+	   padding-left: 125px;
+	   padding-top:8px;
+	   float: right;
+	}
+	.nav-last {
+	   display: inline;
+	}
+
+	.dbsh1 {
+	   padding-left: 230px;
+	   color: #2B95D8;
+	}
+
+	.dbsh1 h1 {
+	   font-weight: 700;
+	   font-size: 30px;
+	}
+
+	.loginSub1 {
+	   margin-left: 230px;
+	   border: 1px solid #0A2F64;
+	   width: 600px;
+	   height: 700px;
+	}
+
+	.loginSub1Welcome {
+	   border: 1px solid #0A2F64;
+	   background-color: #0a2f64;
+	   color: white;
+	   margin: 10px;
+	   border-radius: 5px;
+	}
+
+	.loginSub1Welcome h4 {
+	   padding: 10px 0px 5px 10px;
+	   font-weight: bold;
+	   font-size: 20px;
+	}
+	.loginSub1Choose {
+	   padding-left: 10px;
+	}
+
+	.loginSub1ChooseSelect {
+	   padding-left: 20px;
+	   font-size: 25px;
+	}
+
+	.loginSub1ChooseSelect input[type="radio"], input[type="checkbox"] {
+	   
+	   font-size: 25px;
+	   border: 1px solid black;
+	   width: 25px;
+	   height: 26px;
+	   opacity: 0.5;
+	   margin: 8px 4px;
+	   vertical-align: top;
+	}
+
+	.span_loginSub1ChooseSelect {
+	   font-size: 18px;
+	} 
+
+	.span_forgetCustID{
+	   font-size: 15px;
+	}
+
+	.LoginButton {
+	   float: right;
+	   height: 44px;
+	   font-size: 20px;
+	   background-color: #086978;
+	   padding-right: 10px;
+	   margin-right: 20px;
+	   color:white;
+	   border-radius: 5px;
+	}
+
+	.loginButton:hover {
+	   text-decoration: underline !important;
+	}
+
+	.loginSub1SignUp {
+	   
+	   border-top: 1px solid black;
+	   padding-top:15px;
+	   padding-left:30px;
+	   margin-top: 50px;
+	}
+
+	.warnings {
+	   padding-left : 230px;
+	}
+
+	.loginSub1 {
+	   border-radius: 5px;
+	}
+
+
+
+	</style>
 </head>
-
-<style>
-
-.nav-bar-back {
-	background-color: #0a2f64;
-	border-top: 1px solid white;
-}
-
-.navbar-dark .navbar-nav .nav-link {
-	color: white;
-}
-
-#global {
-	padding-left: 300px;
-}
-
-.navbar {
-	width: 1000px;
-}
-
-.navbar-nav1 {
-	padding-left: 160px;
-}
-
-.navbar-nav1 li{
-	padding-left: 25px;
-}
-
-.navbar-nav2 {
-	padding-left: 35px;
-}
-
-.navbar-nav2 li {
-	padding-left: 20px;
-}
-
-.navbar-nav2 .nav-item-end {
-
-	padding-left: 125px;
-	padding-top:8px;
-	float: right;
-}
-.nav-last {
-	display: inline;
-}
-
-.dbsh1 {
-	padding-left: 230px;
-	color: #2B95D8;
-}
-
-.dbsh1 h1 {
-	font-weight: 700;
-	font-size: 30px;
-}
-
-.loginSub1 {
-	margin-left: 230px;
-	border: 1px solid #0A2F64;
-	width: 600px;
-	height: 700px;
-}
-
-.loginSub1Welcome {
-	border: 1px solid #0A2F64;
-	background-color: #0a2f64;
-	color: white;
-	margin: 10px;
-	border-radius: 5px;
-}
-
-.loginSub1Welcome h4 {
-	padding: 10px 0px 5px 10px;
-	font-weight: bold;
-	font-size: 20px;
-}
-.loginSub1Choose {
-	padding-left: 10px;
-}
-
-.loginSub1ChooseSelect {
-	padding-left: 20px;
-	font-size: 25px;
-}
-
-.loginSub1ChooseSelect input[type="radio"], input[type="checkbox"] {
-	
-	font-size: 25px;
-	border: 1px solid black;
-	width: 25px;
-	height: 26px;
-	opacity: 0.5;
-	margin: 8px 4px;
-	vertical-align: top;
-}
-
-.span_loginSub1ChooseSelect {
-	font-size: 18px;
-} 
-
-.span_forgetCustID{
-	font-size: 15px;
-}
-
-.LoginButton {
-	float: right;
-	height: 44px;
-	font-size: 20px;
-	background-color: #086978;
-	padding-right: 10px;
-	margin-right: 20px;
-	color:white;
-	border-radius: 5px;
-}
-
-.loginButton:hover {
-	text-decoration: underline !important;
-}
-
-.loginSub1SignUp {
-	
-	border-top: 1px solid black;
-	padding-top:15px;
-	padding-left:30px;
-	margin-top: 50px;
-}
-
-.warnings {
-	padding-left : 230px;
-}
-
-.loginSub1 {
-	border-radius: 5px;
-}
-
-
-
-</style>
-
 <body>
-
 	<div id="global">
-
 		<nav class="navbar navbar-expand-sm nav-bar-back navbar-dark">
 			<ul class="navbar-nav navbar-nav1">
-				<li class="nav-item"><a class="nav-link" href="#">PERSONAL</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">PREMIER </a></li>
-				<li class="nav-item"><a class="nav-link" href="#">BUSINESS</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">CORPORATE</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">INTERNATIONAL</a></li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">PERSONAL</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">PREMIER</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">BUSINESS</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">CORPORATE</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">INTERNATIONAL</a>
+				</li>
 			</ul>
 		</nav>
-
 		<nav class="navbar navbar-expand-sm nav-bar-back navbar-dark">
-			<a class="navbar-brand" href="#"> <img src="/images/r-b-s-logo-on-blue-bg.svg" alt="logo"
-				style="width: 118px; height: 32px">
-			</a>
+			<a class="navbar-brand" href="#"><img alt="logo" src="/images/r-b-s-logo-on-blue-bg.svg" style=
+			"width: 118px; height: 32px"></a>
 			<ul class="navbar-nav navbar-nav2">
-				<li class="nav-item"><a class="nav-link" href="#">Products</a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Security & Support </a></li>
-				<li class="nav-item"><a class="nav-link" href="#">Life Moments</a></li>
-				<li class="nav-item-end"><a class="nav-link nav-last" href="#">Privacy & Cookies</a> | <a class="nav-link nav-last" href="#">Accessibility</a></li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Products</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Security & Support</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" href="#">Life Moments</a>
+				</li>
+				<li class="nav-item-end">
+					<a class="nav-link nav-last" href="#">Privacy & Cookies</a> | <a class="nav-link nav-last" href=
+					"#">Accessibility</a>
+				</li>
 			</ul>
-		</nav>
-
-		<br> <br>
-
+		</nav><br>
+		<br>
 		<div class="dbsh1">
 			<h1>Digital Banking Services</h1>
 		</div>
-
 		<div class="loginMain">
-
 			<div class="loginSub1">
-
 				<div class="loginSub1Welcome">
 					<h4>Welcome to Digital Banking</h4>
 				</div>
-
 				<div class="loginSub1Choose">
-					<span>Choose how you'd like to log in. You can use your customer number or your card
-						number.</span>
+					<span>Choose how you'd like to log in. You can use your customer number or your card number.</span>
 				</div>
-				
 				<div class="loginSub1ChooseSelect">
-					<input type=radio name="loginType" value="CID"> Customer number
-					<br>
-					<span class="span_loginSub1ChooseSelect">
-					This is your date of birth (DDMMYY) followed by your unique identification number.
-					</span>
-					<br>
-					<input type=text name="custNumber"><br>
-					<span class="span_loginSub1ChooseSelect">
-					Password
-					</span><Br>
-					
-					<input type=text name="custPassword"><br>
+					<div id="errMsg" style="color:red"></div>
+					<input name="loginType" type="radio" value="CID"> Customer number<br>
+					<span class="span_loginSub1ChooseSelect">This is your date of birth (DDMMYY) followed by your unique
+					identification number.</span><br>
+					<input name="custNumber" type="text" id="custNumber"><br>
+					<span class="span_loginSub1ChooseSelect">Password</span><br>
+					<input name="custPassword" type="password" id="custPassword"><br>
 					<span class="span_forgetCustID"><a href="#">Forgotten your customer number / Password ?</a></span>
 				</div>
-				
 				<div class="loginSub1ChooseSelect">
-					<input type=radio name="loginType" value="CARD" > Card number
-				</div>	
+					<input name="loginType" type="radio" value="CARD"> Card number
+				</div><br>
 				<br>
-				<br>
-				
 				<div class="loginSub1ChooseSelect">
-					<input type="checkbox" name=remember value="Y"> Remember Me?
-				</div>		
-				
+					<input name="remember" type="checkbox" value="Y"> Remember Me?
+				</div><br>
+				<div>
+					<input class="LoginButton" id="login" name="login" type="button" value="Login">
+				</div><br>
 				<br>
-				<div><input type="button" name="login" value=Login class="LoginButton"></div>
-				<br><br>
-				
-				
 				<div class="loginSub1SignUp">
-					 Not an online user? <a href="#">Sign up here</a> 
+					Not an online user? <a href="#">Sign up here</a>
 				</div>
-			</div>
-			
+			</div><br>
 			<br>
-			<br>
-			
-			<div class="warnings"><img src="/images/security.gif" alt="security" width="600px"></div>
-			
-			<Br>
+			<div class="warnings"><img alt="security" src="/images/security.gif" width="600px"></div><br>
 			<br>
 			
-
-
+			<div id="Vignesh">GGGGGGGGGGGGGg</div>
+			
 		</div>
-
 	</div>
-
+	
+	<script>
+		
+		$("#login").click(function() {
+			var custNumber = $("#custNumber").val();
+			var custPassword = $("#custPassword").val();
+			
+			$.post('/digitalBank/login',{"custNumber":custNumber,"custPassword":custPassword},function(result) {
+				if(result.login=='failure'){
+					alert('Failed');
+					$("#errMsg").text('Invalid Username / Password');
+				}
+				if(result.login=='success'){
+					alert('Success');
+					$("#errMsg").text('');
+				}
+			})
+			
+		});
+	
+	
+	</script>
+	
 </body>
 </html>
