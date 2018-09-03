@@ -28,7 +28,7 @@ mongoose.connect(dbConfig.url, {
 
 // define a simple route
 app.get('/', (req, res) => {
-    res.json({"message": "Welcome to EasyNotes application. Take notes quickly. Organize and keep track of all your notes."});
+    res.json({"message": "Welcome to 2FA application"});
 });
 
 // listen for requests
@@ -37,8 +37,8 @@ app.listen(3000, () => {
 });
 
 // Require Notes routes
-require('./app/routes/note.routes.js')(app);
+require('./app/routes/2faRoutes.js')(app);
 //global error 404
-app.use(function(req,res){
+app.use(function(req,res) {
   res.status(404).send({url:req.originalUrl+ " not found"});
 });

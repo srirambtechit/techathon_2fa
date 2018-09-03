@@ -1,5 +1,5 @@
 {
-  "name": "node-easy-notes-app",
+  "name": "2factor-authentication-app",
   "version": "1.0.0",
   "description": "Hackathon",
   "main": "server.js",
@@ -11,7 +11,7 @@
     "RestAPI",
     "MongoDB",
     "Mongoose",
-    "Notes"
+    "2FA"
   ],
   "author": "#includeTeam",
   "license": "ISC",
