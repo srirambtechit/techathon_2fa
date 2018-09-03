@@ -61,14 +61,14 @@
 
 	.dbsh1 h1 {
 	   font-weight: 700;
-	   font-size: 30px;
+	   font-size: 25px;
 	}
 
 	.loginSub1 {
 	   margin-left: 230px;
 	   border: 1px solid #0A2F64;
 	   width: 600px;
-	   height: 700px;
+	   height: 635px;
 	}
 
 	.loginSub1Welcome {
@@ -82,7 +82,7 @@
 	.loginSub1Welcome h4 {
 	   padding: 10px 0px 5px 10px;
 	   font-weight: bold;
-	   font-size: 20px;
+	   font-size: 18px;
 	}
 	.loginSub1Choose {
 	   padding-left: 10px;
@@ -130,9 +130,9 @@
 	.loginSub1SignUp {
 	   
 	   border-top: 1px solid black;
-	   padding-top:15px;
+	   padding-top:20px;
 	   padding-left:30px;
-	   margin-top: 50px;
+	   margin-top: 40px;
 	}
 
 	.warnings {
@@ -148,6 +148,8 @@
 	</style>
 </head>
 <body>
+
+	<form action="/digitalBank/dashboard" id="loginForm" method="post">
 	<div id="global">
 		<nav class="navbar navbar-expand-sm nav-bar-back navbar-dark">
 			<ul class="navbar-nav navbar-nav1">
@@ -201,37 +203,36 @@
 				</div>
 				<div class="loginSub1ChooseSelect">
 					<div id="errMsg" style="color:red"></div>
-					<input name="loginType" type="radio" value="CID"> Customer number<br>
+					<input name="loginType" type="radio" value="CID" checked="checked"> Customer number<br>
 					<span class="span_loginSub1ChooseSelect">This is your date of birth (DDMMYY) followed by your unique
 					identification number.</span><br>
-					<input name="custNumber" type="text" id="custNumber"><br>
+					<input name="custNumber" type="text" id="custNumber" ><br>
 					<span class="span_loginSub1ChooseSelect">Password</span><br>
 					<input name="custPassword" type="password" id="custPassword"><br>
 					<span class="span_forgetCustID"><a href="#">Forgotten your customer number / Password ?</a></span>
 				</div>
 				<div class="loginSub1ChooseSelect">
 					<input name="loginType" type="radio" value="CARD"> Card number
-				</div><br>
-				<br>
+				</div>	
+				
 				<div class="loginSub1ChooseSelect">
 					<input name="remember" type="checkbox" value="Y"> Remember Me?
 				</div><br>
 				<div>
 					<input class="LoginButton" id="login" name="login" type="button" value="Login">
-				</div><br>
+				</div>
 				<br>
 				<div class="loginSub1SignUp">
 					Not an online user? <a href="#">Sign up here</a>
 				</div>
-			</div><br>
+			</div>
 			<br>
 			<div class="warnings"><img alt="security" src="/images/security.gif" width="600px"></div><br>
 			<br>
 			
-			<div id="Vignesh">GGGGGGGGGGGGGg</div>
-			
 		</div>
 	</div>
+	</form>
 	
 	<script>
 		
@@ -247,6 +248,7 @@
 				if(result.login=='success'){
 					alert('Success');
 					$("#errMsg").text('');
+					$("#loginForm").submit();
 				}
 			})
 			

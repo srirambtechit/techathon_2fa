@@ -41,12 +41,12 @@
 
 .nav, .sidebar-nav {
 	display: block;
-	padding: 15px;
+	padding: 10px;
 }
 
 .sidebar-nav li {
-	padding-bottom: 20px;
-	font-size: 20px;
+	padding-bottom: 30px;
+	font-size: 18px;
 }
 
 .sidebar-nav li a {
