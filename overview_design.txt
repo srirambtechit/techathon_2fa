@@ -32,7 +32,7 @@ Request/Response model
              "mobileId" : 4332,
              "transaction" : {
                "id" : "a31a-ffed-c2a9-232b",
-               "acknowledged" : true
+               "authorized" : true
              }
            }
 
@@ -42,7 +42,7 @@ Request/Response model
              "mobileId" : 4332,
              "transaction" : {
                "id" : "a31a-ffed-c2a9-232b",
-               "acknowledged" : true
+               "authorized" : false
              }
            }
 
@@ -53,3 +53,6 @@ Points to note down
  - transactionId should be unique across system and history
  - transactionId should be length of 16+3 characters
  - Android global app values should maintain mobileId and customerId
+
+To make local application available over internet just for testing purpose
+./ngrok http 3000
