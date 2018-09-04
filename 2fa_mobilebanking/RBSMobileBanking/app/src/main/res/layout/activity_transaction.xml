@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    <TextView
+        android:id="@+id/text_view_id"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="content"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/textView_toAcc"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="content"
+        android:textSize="25dp"
+        android:textStyle="bold"
+         />
+
+    <TextView
+        android:id="@+id/textView_toAmt"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="content"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:id="@+id/textView_created"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="content"
+        android:textSize="25dp"
+        android:textStyle="bold" />
+
+
+
+
+
+    <LinearLayout
+        android:id="@+id/linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+
+        <Button
+            android:id="@+id/transfer_no"
+            android:layout_width="0dip"
+            android:onClick="postNo"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="NO"
+            />
+
+        <Button
+            android:id="@+id/transfer_yes"
+            android:layout_width="0dip"
+            android:layout_weight="1"
+            android:onClick="postYes"
+            android:layout_height="wrap_content"
+            android:text="YES"
+            />
+    </LinearLayout>
+</LinearLayout>
