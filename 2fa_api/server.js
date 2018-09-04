@@ -15,6 +15,7 @@ const dbConfig = require('./config/database.config.js');
 const mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
+mongoose.set('useCreateIndex', true);
 
 // Connecting to the database
 mongoose.connect(dbConfig.url, {
@@ -37,7 +38,9 @@ app.listen(3000, () => {
 });
 
 // Require Notes routes
-require('./app/routes/2faRoutes.js')(app);
+require('./app/routes/auth.routes.js')(app);
+require('./app/routes/ack.routes.js')(app);
+
 //global error 404
 app.use(function(req,res) {
   res.status(404).send({url:req.originalUrl+ " not found"});

@@ -2,54 +2,47 @@ Design:-
 
 REST API Design
 Services...
-a) NB: createAuthReq(authObject)
+a) NB: authReq(authObject)
 b) MB: findAuth(mobileId)
-c) MB: createAckReq(ackObject)
-d) NB: findAck(txId)
+c) MB: ackReq(ackObject)
 
 API endpoints
 a) POST: http://servicehost:8080/rbs2fa/api/auths
 b) GET: http://servicehost:8080/rbs2fa/api/auths/:mobileId
 c) POST: http://servicehost:8080/rbs2fa/api/acks
-d) GET: http://servicehost:8080/rbs2fa/api/acks/:txId
 
 Object model
 1) authObject - Success flow
     {
-      "userId" : "Sriram",
+      "customerId" : "Sriram",
       "mobileId": 4332,
       "transaction": {
         "id": "a31a-ffed-c2a9-232b",
         "toAccount" : 2341483232223,
-        "amount" : $5000,
-        "createdAt" : "2018-09-03 08:46:12"
+        "amount" : 5000
       }
     }
 
 2) authObject - Fail flow -- transaction object should be empty when there are no authentication request
-    {
-      "userId" : "Sriram",
-      "mobileId": 4332,
-      "transaction": {}
-    }
+    {}
 
 3) ackObject - Yes flow
     {
-      "userId" : "Sriram",
+      "customerId" : "Sriram",
       "mobileId" : 4332,
       "transaction" : {
         "id" : "a31a-ffed-c2a9-232b",
-        "acknowledged" : "Yes"
+        "acknowledged" : true
       }
     }
 
 4) ackObject - No flow
     {
-      "userId" : "Sriram",
+      "customerId" : "Sriram",
       "mobileId" : 4332,
       "transaction" : {
         "id" : "a31a-ffed-c2a9-232b",
-        "acknowledged" : "No"
+        "acknowledged" : false
       }
     }
 
@@ -58,4 +51,4 @@ Object model
 Points to note down
  - transactionId should be unique across system and history
  - transactionId should be length of 16+3 characters
- - Android global app values should maintain mobileId and userId
+ - Android global app values should maintain mobileId and customerId
