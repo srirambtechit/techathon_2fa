@@ -2,6 +2,7 @@ package com.digitalbank.repository;
 
 import java.util.List;
 
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
@@ -15,5 +16,9 @@ public interface AccountRepository extends CrudRepository<Account, AccountPrimar
 	
 	@Query("select acc from Account acc where acc.custNumber = :custNumber")
 	public List<Account> findByCustNumber(@Param("custNumber") String custNumber);
+	
+	@Modifying
+	@Query("Update Account acc set acc.accBalance = acc.accBalance - :paymentAmount where acc.accountPrimaryDetails = :accountPrimaryDetails and acc.custNumber = :custNumber")
+	public int payPayee(@Param("custNumber") String custNumber,@Param("accountPrimaryDetails") AccountPrimaryDetails accountPrimaryDetails,@Param("paymentAmount") Double paymentAmount);
 
 }

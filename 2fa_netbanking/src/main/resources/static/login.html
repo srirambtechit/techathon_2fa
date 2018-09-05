@@ -242,11 +242,9 @@
 			
 			$.post('/digitalBank/login',{"custNumber":custNumber,"custPassword":custPassword},function(result) {
 				if(result.login=='failure'){
-					alert('Failed');
 					$("#errMsg").text('Invalid Username / Password');
 				}
 				if(result.login=='success'){
-					alert('Success');
 					$("#errMsg").text('');
 					$("#loginForm").submit();
 				}

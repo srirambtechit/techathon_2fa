@@ -18,6 +18,11 @@ public class AccountPrimaryDetails implements Serializable{
 	
 	public AccountPrimaryDetails() {
 	}
+	
+	public AccountPrimaryDetails(String accNo,String sortCode) {
+		this.accNo = accNo;
+		this.sortCode = sortCode;
+	}
 
 	public String getAccNo() {
 		return accNo;

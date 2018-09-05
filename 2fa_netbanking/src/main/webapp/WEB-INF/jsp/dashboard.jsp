@@ -9,6 +9,7 @@
 	</script> 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
 	</script>
+	<script src="/js/ToProgress.min.js"></script>
 	
 	<link href="/css/main.css" rel="stylesheet">
 	<link href="/css/dashboardmain.css" rel="stylesheet">
@@ -97,7 +98,7 @@
 				<a href="#">Security</a>
 			</li>
 			<li>
-				<a href="#">Logout</a>
+				<a href="/digitalBank">Logout</a>
 			</li>
 		</ul>
 	</nav>
@@ -128,12 +129,6 @@
 						<th>Sort Code</th>
 						<th>Balance</th>
 					</tr>
-					<!-- <tr>
-						<td>Savings</td>
-						<td>10713792</td>
-						<td>151000</td>
-						<td>&#163;1000.00</td>
-					</tr> -->
 				</table>
 			</div><br>
 			<br>
@@ -155,6 +150,7 @@
 				"pay_list"><span>⮞</span>&nbsp;<a href="#">Manage Scheduled payments</a></span><br>
 				<br>
 			</div>
+			<br>
 		</div>
 		<div class="div_payments_enter all_functionalities_parent" id="payments1" >
 			<div class="div_summarytop">
@@ -174,9 +170,7 @@
 					<br>
 					<div>
 						<select class="pay_accnum" name="fromAcc" id="fromAcc">
-							<!-- <option value='10713792'>
-								10713792
-							</option> -->
+							<option value="-">---- Please Select From Account ---- </option>
 						</select>
 					</div>
 				</div>
@@ -185,9 +179,7 @@
 					<br>
 					<div>
 						<select class="pay_accnum" name="toAcc" id="toAcc">
-							<!-- <option value='10713793'>
-								10713793
-							</option> -->
+							<option value="-">---- Please Select To Account ---- </option>
 						</select>
 					</div>
 				</div><br>
@@ -199,7 +191,7 @@
 					</div>
 				</div>
 				<div class="div_payment_button">
-					<input class="payment_button" name="pay_next" type="button" value="Next">
+					<input class="payment_button" name="pay_next" id="pay_next" type="button" value="Next">
 				</div>
 			</div><br>
 			<br>
@@ -222,40 +214,40 @@
 				<div class="div_payment_info">
 					From<br>
 					<div class="payment_review_info">
-						Vignesh - 10713792
+						<span id="payment_review_from"></span>
 					</div>
 				</div>
 				<div class="div_payment_info">
 					To<br>
 					<div class="payment_review_info">
-						Vicky
+						<span id="payment_review_to_payee"></span>
 					</div>
 				</div><br>
 				<div class="div_payment_info">
 					Account Number<br>
 					<div class="payment_review_info">
-						10713793
+						<span id="payment_review_to_payeeAccno"></span>
 					</div>
 				</div>
 				<div class="div_payment_info">
 					Sort Code<br>
 					<div class="payment_review_info">
-						151000
+						<span id="payment_review_to_payeeSortcode"></span>
 					</div>
 				</div>
 				<div class="div_payment_info">
 					Amount<br>
 					<div class="payment_review_info">
-						&#163; 1000.00
+						&#163; <span id="payment_review_to_paymentAmount"></span>
 					</div>
 				</div>
 				<div class="div_payment_button">
-					<input class="payment_button" name="pay_next" type="button" value="Confirm">
+					<input class="payment_button" name="pay_confirm" id="pay_confirm" type="button" value="Confirm">
 				</div>
 			</div><br>
 			<br>
 		</div>
-		<div class="div_payment_2fa_start all_functionalities_parent" >
+		<div class="div_payment_2fa_start all_functionalities_parent" id="payments3">
 			<div class="div_summarytop">
 				<span>Make a payment or transfer</span>
 			</div>
@@ -268,28 +260,37 @@
 				Security</span>
 			</div>
 			<div class="div_payment_2fa_details">
-				<div id="div_2fa_start" style="display: none">
+				<div id="div_2fa_start" class="all_functionalities_parent">
 					<br>
-					<div class="div_2fa_mobile"><img alt="Open Mobile" height="300px" src="/images/2FA-Check-Mobile2.gif"></div>
+					<div class="div_2fa_mobile"><img alt="Open Mobile" height="300px" src="/images/2FA-Check-Mobile3.gif"></div>
 					<div class="div_2fa_guide">
-						Hey <span id="sp_custName"></span>, Open your Mobile Banking registered mobile/tablet to authorize the payment
+						Hey <span id="sp_custName2"></span>, Open your Mobile Banking registered mobile/tablet to authorize the payment
 					</div>
 				</div>
-				<div id="div_2fa_timeout" style="display: none">
+				<div id="div_2fa_timeout" class="all_functionalities_parent">
 					You haven't authorized/rejected the payment. Want to try other options to authorize ?<br>
 					<br>
+					
+					<a href="#" id="try_mobile_link">
 					<div class="try_mobile">
 						<img alt="Try Mobile" src="/images/2FA_try_mobile.jpg"> <span class="try_options">Want to try again from Mobile
 						App ?</span>
-					</div><br>
+					</div></a>
+					<br>
+					<a href="#">
 					<div class="try_text">
 						<img alt="Try Text" src="/images/2FA_try_text.jpg"> <span class="try_options">Want to text you the verification
 						code ?</span>
-					</div><br>
+					</div>
+					</a>
+					<br>
+					<a href="#">
 					<div class="try_call">
 						<img alt="Try Call" src="/images/2FA_try_call.jpg"> <span class="try_options">Want to call you for verification
 						code ?</span>
-					</div><br>
+					</div>
+					</a>
+					<br>
 				</div>
 			</div>
 		</div>
@@ -309,7 +310,7 @@
 				<div class="div_2fa_images"><img alt="Success1" height="100px" src="/images/payment_wallet.png" width="100px">
 				<img alt="Success2" height="80px" src="/images/payment_success.png" width="80px"></div>
 				<div class="div_2fa_authorized_text">
-					Your transaction of amount 1000.00 to Vicky is successful.
+					Your transaction of amount <span id="final_pay_amount"></span> to <span id="final_payee"></span> is successful.
 				</div>
 			</div>
 		</div>
@@ -329,14 +330,15 @@
 				<div class="div_2fa_images"><img alt="Success1" height="100px" src="/images/payment_wallet.png" width="100px">
 				<img alt="Success2" height="80px" src="/images/payment_rejected.png" width="80px"></div>
 				<div class="div_2fa_rejected_text">
-					You have rejected the Transaction of amount 1000.00 to Vicky.<br>
+					You have rejected the Transaction of amount <span id="final_pay_amount_rej"></span> to <span id="final_payee_rej"></span>.<br>
 					Please re-initiate the transaction if you want to pay again
 				</div>
 			</div>
 		</div>
 	</div>
 	<input type="hidden" name="custNumber" id="custNumber" value="${custNumber}" />
-	<input type="hidden" name="mobileID" id="custNumber" value="" />
+	<input type="hidden" name="twoFAServiceEndPoint" id="twoFAServiceEndPoint" value="${twoFAEndPoint}" />
+	<input type="hidden" name="mobileId" id="mobileId" value="" />
 	<input type="hidden" name="custName" id="custName" value="" />
 	<input type="hidden" name="personal_accounts" id="personal_accounts" value="" />
 	<script>
@@ -347,7 +349,7 @@
 				
 				$('.div_greeting').css('display','block');
 				$('#sp_custName').text(response.custName);
-				$('#mobileID').val(response.mobileID);
+				$('#mobileId').val(response.mobileID);
 				$('#custName').val(response.custName);
 			
 			showDashBoard();
@@ -361,9 +363,19 @@
 			//Register Start Payment Click Handler
 			$('#start_payment_link').click(showPaymentEnter);
 			
+			//Payments Click Handler
+			//Payment Review Handler
+			$('#pay_next').click(goToPaymentReview);
+			
+			//Payment Confirm Handler
+			$('#pay_confirm').click(twoFactorAuth);
+			
+			//Mobile Try Again Handler
+			$('#try_mobile_link').click(twoFactorAuth);
+			
+			var progressBar;
+			
 			});
-			
-			
 			
 		});
 		
@@ -407,22 +419,155 @@
 		function displayOwnAndPayeeAccounts() {
 			
 			var personal_accounts =  JSON.parse($('#personal_accounts').val());
+			$('#fromAcc').find("option:gt(0)").remove();
 			for(var i=0;i<personal_accounts.length;i++) {
 				$('<option/>',{value: personal_accounts[i].accountPrimaryDetails.accNo + "|" + personal_accounts[i].accountPrimaryDetails.sortCode})
 				.text(personal_accounts[i].accountPrimaryDetails.accNo).appendTo('#fromAcc');
 			}
 			
 			$.get('/digitalBank/customer/payees',{"custNumber":$('#custNumber').val()},function(payee_accounts) {
-				
+				$('#toAcc').find("option:gt(0)").remove();
 				for(var i=0;i<payee_accounts.length;i++) {
-					$('<option/>',{value: payee_accounts[i].payeePrimaryDetails.accNo + "|" + payee_accounts[i].payeePrimaryDetails.sortCode})
+					$('<option/>',{value: payee_accounts[i].payeePrimaryDetails.accNo + "|" + payee_accounts[i].payeePrimaryDetails.sortCode + "|" + payee_accounts[i].payeeName})
 					.text(payee_accounts[i].payeePrimaryDetails.accNo).appendTo('#toAcc');
 					}
 			});
 			
 		}
 		
-		function getPayeeAccounts() {
+		function goToPaymentReview() {
+			$('.all_functionalities_parent').css('display','none');
+			$('#payments2').css('display','block');
+			displayPaymentReviewDetails();
+		}
+		
+		function displayPaymentReviewDetails() {
+			
+			var payeeDetails = $('#toAcc').val().split('|');
+			$('#payment_review_from').text($('#fromAcc').val().split('|')[0]);
+			$('#payment_review_to_payee').text(payeeDetails[2]);
+			$('#payment_review_to_payeeAccno').text(payeeDetails[0]);
+			$('#payment_review_to_payeeSortcode').text(payeeDetails[1]);
+			$('#payment_review_to_paymentAmount').text($('#pay_amount').val());
+		}
+		
+		function twoFactorAuth() {
+			$.get('/digitalBank/payment/transactionid',function(transactionId){
+				call2FactorAuthService(transactionId);
+			});
+			$('.all_functionalities_parent').css('display','none');
+			$('#payments3').css('display','block');
+			$('#div_2fa_start').css('display','block');
+			$('#sp_custName2').text($("#custName").val());
+			var options = {
+					 id: 'top_progress_bar',
+					 color: '#F44336', 
+					 height: '10px', 
+					 duration: 0.2
+					}
+			var selector = '#div_2fa_start'; 
+			progressBar = new ToProgress(options,selector);
+			progressBar.increase(20);
+			setInterval(function(){progressBar.increase(1.5)},1000);
+			
+		}
+		
+		function call2FactorAuthService(transactionId) {
+			
+			var tranID = transactionId;
+			var custNumber = $('#custNumber').val();
+			var mobileId = $('#mobileId').val();
+			var toAccount =  $('#toAcc').val().split('|')[0];
+			var payee =  $('#toAcc').val().split('|')[2];
+			var fromAccNo = $('#fromAcc').val().split('|')[0];
+			var fromSortCode = $('#fromAcc').val().split('|')[1];
+			var paymentAmount = $('#pay_amount').val();
+			
+			var TwoFAEndPoint = $('#twoFAServiceEndPoint').val();
+			
+			var TwoFAData = {
+					"customerId":custNumber,
+					"mobileId":mobileId,
+					"transaction" : {
+							"id":transactionId,
+							"toAccount":toAccount,
+							"amount":paymentAmount
+							}
+					};
+			
+			$.ajax({
+				url:TwoFAEndPoint,
+				type:"POST",
+				data : TwoFAData,
+				success : function(response) {
+					
+						progressBar.finish();
+						//progressBar.hide();
+						$('#top_progress_bar').remove();
+						
+						$('#div_2fa_start').css('display','none');
+						
+						if(jQuery.isEmptyObject(response)) {
+							$('#div_2fa_timeout').css('display','block');
+						}
+						
+						else {
+							
+							//alert('Response');
+							//alert(response.transaction.authorized);
+						
+							if(response.transaction.authorized == true) {
+							
+							//Do Payment Through Payment Controller
+							var accountData = {"account":{"custNumber":custNumber,
+												"accountPrimaryDetails": {
+													"accNo"	: fromAccNo,
+													"sortCode" : fromSortCode
+													}},
+													"paymentAmount" : paymentAmount
+												};
+							/* $.post('/digitalBank/payment/paypayee',accountData,function(response) {
+								$('.all_functionalities_parent').css('display','none');
+								$('#div_payment_authorized').css('display','block');
+								$('#final_pay_amount').text(paymentAmount);
+								$('#final_payee').text(payee);
+							}); */
+							
+							$.ajax({
+							    type: "POST",
+							    url: "/digitalBank/payment/paypayee",
+							    // The key needs to match your method's input parameter (case-sensitive).
+							    data: JSON.stringify(accountData),
+							    contentType: "application/json; charset=utf-8",
+							    dataType: "json",
+							    success: function(data){
+							    	$('.all_functionalities_parent').css('display','none');
+									$('#div_payment_authorized').css('display','block');
+									$('#final_pay_amount').text(paymentAmount);
+									$('#final_payee').text(payee);
+								},
+							    failure: function(errMsg) {
+							        alert(errMsg);
+							    }
+							});
+								
+							}
+							
+							if(response.transaction.authorized == false) {
+								$('.all_functionalities_parent').css('display','none');
+								$('#div_payment_rejected').css('display','block');
+								$('#final_pay_amount_rej').text(paymentAmount);
+								$('#final_payee_rej').text(payee);
+							}
+						}
+						
+					},					
+					error:function(XMLHttpRequest,textStatus,message) {
+						console.log('Error during 2FA Service Call ' + textStatus + ":" + message);
+					}			
+					
+				 
+			});
 			
 		}
 	

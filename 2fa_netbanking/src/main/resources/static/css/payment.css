@@ -76,6 +76,7 @@
 	height: 500px;
 	font-size: 22px;
 	border-radius: 5px;
+	border: 2px solid #dedef1;
 }
 
 .div_payment_info {
@@ -114,9 +115,10 @@
 	padding: 20px;
 	background-color: white;
 	width: 100%;
-	height: 550px;
+	height: 700px;
 	font-size: 22px;
 	border-radius: 5px;
+	border: 2px solid #dedef1;
 }
 
 .payment_review_info {
