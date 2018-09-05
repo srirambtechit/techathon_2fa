@@ -18,7 +18,6 @@ exports.authReq = (req, res) => {
     .then(data => {
       console.log('finding ack...');
       authObject.timer = setInterval(findAck, delay, authObject);
-      console.log('Timer : ' + authObject.timer);
     }).catch(err => {
         res.status(500).send({
             message: err.message || "Some error occurred while creating the Auth"
@@ -58,6 +57,20 @@ function removeAuth(args) {
     return {};
   });
 }
+
+exports.findAuth = (req, res) => {
+    Auth.findOne({ mobileId: req.params.mobileId })
+    .then(auth => {
+        if(!auth) {
+            console.log('No auth object for ' + req.params.mobileId);
+            return res.status(200).send({});
+        }
+        res.status(200).send(auth);
+    }).catch(err => {
+      console.log(err.message || 'Error occurred during Auth finding');
+      return {};
+    });
+};
 
 exports.test = (req, res) => {
   return res.status(200).send({message: "Testing"});

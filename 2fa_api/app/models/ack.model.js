@@ -5,7 +5,7 @@ const AckSchema = mongoose.Schema({
   mobileId: { type: Number, max: 9999, required: true, unique: true },
   transaction: {
     id: { type: String },
-    acknowledged: { type: Boolean }
+    authorized: { type: Boolean }
   }
 });
 module.exports = mongoose.model('acks', AckSchema);
