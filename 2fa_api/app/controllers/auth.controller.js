@@ -1,7 +1,7 @@
 const Auth = require('../models/auth.model.js');
 const Ack = require('../models/ack.model.js');
 const threshold = 6;
-const delay = 10000; // 10 seconds
+const delay = 5000; // 5 seconds
 
 exports.authReq = (req, res) => {
 
