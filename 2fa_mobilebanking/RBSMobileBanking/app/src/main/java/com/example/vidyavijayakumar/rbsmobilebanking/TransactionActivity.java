@@ -59,7 +59,7 @@ public class TransactionActivity extends AppCompatActivity {
             amountTextView.setText("Amount :" +transact.getString("amount"));
 
             TextView createdTextView = (TextView) findViewById(R.id.textView_created);
-            createdTextView.setText("Created at :"+ transaction.getString("customerId"));
+            createdTextView.setText("Customer ID :"+ transaction.getString("customerId"));
 
         }catch(JSONException e){
             e.printStackTrace();

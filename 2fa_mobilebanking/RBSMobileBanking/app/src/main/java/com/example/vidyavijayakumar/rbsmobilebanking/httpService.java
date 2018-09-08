@@ -59,7 +59,7 @@ public class httpService extends Service implements ComponentCallbacks{
                       new MyPollTask().execute();
                  }
 
-             } ;new Timer().scheduleAtFixedRate(task,10000,30000);
+             } ;new Timer().scheduleAtFixedRate(task,10000,15000);
 
 
 
